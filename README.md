@@ -1,4 +1,4 @@
-# cinemaProject02
+# Projet Reactjs
 
 ## Available Scripts
 Using create react-app for this project
