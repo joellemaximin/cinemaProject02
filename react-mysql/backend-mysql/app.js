@@ -1,18 +1,29 @@
-var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
+var cors = require('cors');
+var bodyParser = require('body-parser');
+// var mesRoutes = require('./routes/routes');
 
 var app = express();
+var sql = require('./models/db.js');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
+app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
+app.set('view engine', 'ejs'); // 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+// mesRoutes(app);
 
-var mesRoutes = require('./routes/routes');
+//var router = express.Router();
 
-mesRoutes(app);
+let products = require('./routes/products');
+app.use('/products', products);
+
+let users = require('./routes/users');
+app.use('/users', products);
+
+
+
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {

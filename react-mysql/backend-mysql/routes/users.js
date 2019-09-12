@@ -1,9 +1,14 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+//get the db
+var sql = require('../models/db.js');
 
+//display all products
+router.get('/', (req, res) => {
+	sql.query('SELECT * from users', (err, fields,rows)=> {
+		res.send(fields)
+    });
+
+});
 module.exports = router;
