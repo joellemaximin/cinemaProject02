@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
 });
 
-//add a product
+//add a product 
 router.post('/add', (req, res) => {
 	const {name, description, price } = req.body;
 	sql.query('INSERT INTO name, description, price SET ?', {
