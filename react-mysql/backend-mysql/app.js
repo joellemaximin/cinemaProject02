@@ -28,8 +28,8 @@ app.use(session({
 let products = require('./routes/products');
 app.use('/products', products);
 
-//let users = require('./routes/users');
-// app.use('/users', users);
+let users = require('./routes/users');
+app.use('/users', users);
 
 //display all products
 // app.get('/', (req, res) => {
@@ -38,80 +38,6 @@ app.use('/products', products);
 //     });
 // });
 
-app.post('/login', (req,res) =>{
-	req.session.email = req.body.email;
-	req.session.lastname = req.body.lastname;
-	req.session.firstname = req.body.firstname;
-	req.session.password = req.body.password;
-	res.end('good')
-	// const {email, password } = req.body
-
-	// if(email && password ){
-	// 	const user = user.find(
-	// 		user => user.email === email && user.password === password
-	// 	)
-	// 	if (user) {
-	// 		req.session.userId = user.id
-	// 		return res.send("page home")
-	// 	}
-	// }
-
-	// res.redirect('/login')
-	// res.send('error')
-});
-app.get('/', function(req,res){
-	if(req.session.email){
-		res.redirect('/logged')
-	}
-	res.json('')
-})
-
-app.get('/logged', (req, res)=>{
-	if(req.session.email){
-		res.json('bien connecté')
-	}
-	res.json('not logged')
-})
-
-app.post('/register', (req,res)=>{
-
-	// const {firstname, lastname, email, password } = req.body
-	// if(firstname && lastname && email && password ){
-	// 	const exists = users.some(
-	// 		user => user.email === email
-	// 	)
-	// 	if (!exists){
-	// 		const user = {
-	// 			id: users.length + 1,
-	// 			firstname,
-	// 			lastname,
-	// 			email,
-	// 			password
-	// 		}
-	// 		sql.push(user);
-	// 		req.session.userId = user.id
-	// 	}
-	// }
-	// res.redirect('/register')
-	// res.send('erroooor register')
-})
-
-var sessionData
-
-app.get('/destroysession',function(req,res){
-    sessionData = req.session;
-    
-    sessionData.destroy(function(err) {
-        if(err){
-            msg = 'Error destroying session';
-            res.json(msg);
-        }else{
-            msg = 'Session destroy successfully';
-            console.log(msg)
-            res.json(msg);
-        }
-    });
-});
 
 // // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
