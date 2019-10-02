@@ -1,0 +1,19 @@
+#container-main{
+    padding: 25px 8em;
+    margin: 2em 8em;
+    background-color: rgb(241, 238, 238);
+    border-radius: 2em;
+}
+
+.title{
+    float: left;
+    padding: 11px 18px;
+    margin-left: 7em;
+    margin-right: 7em;
+    color: rgb(155, 219, 182);
+    cursor: pointer;
+
+}
+.header>.title:hover {
+    color: rgb(190, 155, 219);
+}

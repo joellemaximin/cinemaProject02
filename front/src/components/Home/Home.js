@@ -55,7 +55,7 @@ class Home extends Component {
         <ConnectForm/>
         <h3>Liste des produits</h3>
         
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
