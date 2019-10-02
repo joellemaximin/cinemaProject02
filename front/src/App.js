@@ -10,18 +10,25 @@ import {Table, Button, Container} from 'react-bootstrap'
 
 class App extends Component {
   state = {
-    products: []
+    products: [],
+    // name: 'Maxx',
+    // id: '101'
   }
 
+         
 
 
-  render() {
+
+  render(){
+    // setTimeout(()=>{this.setState({name:'Jaeha', id:'222'})},2000)
 
     return (
     
       <div>
         {/* <Button onClick={this.toggle}>Ajouter un produit</Button> */}
-
+        {/* <h1>Hello {this.state.name}</h1>
+      
+        <h2>Your Id is {this.state.id}</h2>  */}
         <Router>
           <Route exact path="/" component={Home} />
           <Route path="/all-products" component={Products} />

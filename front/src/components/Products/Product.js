@@ -14,7 +14,7 @@ class Product extends Component {
       show: false,
       setShow: false,
       newProductData: {
-        title: '',
+        name: '',
         image: '',
         disponible: ''
       },
@@ -34,9 +34,10 @@ class Product extends Component {
   productStyle = () => {
     return {
       padding: '15px',
-      color: this.props.product.disponible ? 'blue' : 'none'
+      color: this.state.newProductData.disponible ? 'blue' : 'none'
     }
   }
+  
   newProductToggle(){
     this.setState({
       
@@ -49,12 +50,13 @@ class Product extends Component {
             <Card style={this.productStyle()}>
               <CardImg top width="100%"></CardImg>
               <CardBody>
-                <CardTitle>{this.props.product.title}</CardTitle>
-                <CardText>{this.props.product.disponible}</CardText>
+                {/* <CardTitle>{this.props.product.name}</CardTitle>
+                <CardText>{this.props.product.disponible}</CardText> */}
                   <Button variant="info">Modifier</Button>
                   <Button variant="danger">Supprimer</Button>
               </CardBody>
             </Card>
+   
           
           </Container>
        </div>

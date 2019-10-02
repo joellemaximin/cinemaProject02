@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 // import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Header from '../Templates/Header';
 import Footer from '../Templates/Footer';
+import CarouselImg from '../Templates/CarouselImg';
+import ConnectForm from '../Templates/ConnectForm';
+
 import $ from 'jquery';
 import {Table, Button, Container} from 'react-bootstrap'
 
@@ -48,8 +51,11 @@ class Home extends Component {
     return (
       <div>
         <Header/>
+        <CarouselImg/>
+        <ConnectForm/>
         <h3>Liste des produits</h3>
-
+        
+        <Footer/>
       </div>
     );
   }

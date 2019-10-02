@@ -17,7 +17,7 @@ export default class Header extends Component {
                         <h5>Produits</h5>
                     </li>
                 </NavLink>
-                <NavLink className="currentHeader" activeClassName="" to="/users/account" >
+                <NavLink className="currentHeader" activeClassName="" to="/users/register" >
                     <li className="linkHeader">
                         <h5>Account</h5>
                     </li>

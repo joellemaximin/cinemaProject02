@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 // import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Product from './Product';
+import FilterProduct from './FilterProduct';
+import Header from '../Templates/Header';
+import Footer from '../Templates/Footer';
 import PropTypes from 'prop-types';
 import {Table, Button, Container} from 'react-bootstrap'
 
@@ -34,7 +37,9 @@ class AllProducts extends Component {
     return (
       // this.state.products.map((product)=>(
         <div>
-          <h2>AllProd!ucts</h2>
+          <Header/>
+
+          <FilterProduct/>
 
           {this.state.products.map((product =>
             <div key={product.product_id} className="productList">
@@ -42,10 +47,12 @@ class AllProducts extends Component {
               <h2 className="productH2">{product.price}</h2>
               <h2 className="productH2">{product.description}</h2>
               <h2 className="productH2">{product.product_date}</h2>
-              <Button variant="info" to='/'>Afficher</Button>
+              <Button variant="info" to='/product'>Afficher</Button>
 
             </div>
           ))}
+          <Footer/>
+
           {/* <Product key={product.id} product={product} />      */}
         </div>
 
